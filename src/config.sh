@@ -88,6 +88,9 @@ function f_userInput {
   echo -en "\n$RED_COLOR$BOLD▶$CYAN_COLOR▶$WHITE_COLOR▶ $LIGHT_BROWN_COLOR$BOLD$1"
   read $2
 }
+function f_userInputStatus {
+  echo -en "\n$RED_COLOR$BOLD▶$CYAN_COLOR▶$WHITE_COLOR▶ $LIGHT_BROWN_COLOR$BOLD$1"
+}
 function f_clearAll {
   if (($OSTYPE == "linux-gnu" || $OSTYPE == "darwin")); then
     clear
@@ -140,12 +143,14 @@ function f_selector {
 }
 
 function f_create_dir {
-  f_userInput "$1" projectName
-  f_userMsg "$SUCCESS_STAR" "Initiating ($projectName) HTML based project in current directory..."
+  f_userInputStatus "$1"
   function create_basic_dir {
+    read projectName
+    f_userMsg "$SUCCESS_STAR" "Initiating ($projectName) HTML based project in current directory..."
     if [[ -d "$CURRENT_DIR/$projectName" ]]; then
       f_userMsg "$DANGER_STAR" "There is a project which already exist with this name ($projectName)!"
-      f_userInput "Please enter a different project name: " $projectName
+      # f_userInput "Please enter a different project name: " $projectName
+      f_userInputStatus "Please enter a different project name: "
       create_basic_dir
     else
       mkdir "$CURRENT_DIR/$projectName"
