@@ -1,17 +1,14 @@
 # !/bin/bash
 
 # -------------------- Importing files --------------------
-chmod -R +x *
-source style.sh
-source pkg.sh
+source jsConsoler_style.sh
+source jsConsoler_pkg.sh
 
 # -------------------- Function & Logics --------------------
-cd ..
 CURRENT_DIR=$PWD
-cd src
-if (($OSTYPE == "win32")); then
-  reg add HKEY_CURRENT_USER\Console /v VirtualTerminalLevel /t REG_DWORD /d 0x00000001 /f
-fi
+# if (($OSTYPE == "win32")); then
+#   reg add HKEY_CURRENT_USER\Console /v VirtualTerminalLevel /t REG_DWORD /d 0x00000001 /f
+# fi
 function f_isCommandExist {
   if [[ $($1 --help) ]]; then
     echo 1
@@ -27,7 +24,7 @@ function f_line {
 }
 function f_tageMsg {
   if [[ "$3" == "disabled" ]]; then
-    echo -e " $RESET$STRIKE$DISABLED_COLOR[$DISABLED_COLOR$BOLD$1$RESET$STRIKE$DISABLED_COLOR]:  $RESET$STRIKE$2\n"
+    echo -e " $RESET$DISABLED_COLOR[$DISABLED_COLOR$BOLD$1$RESET$DISABLED_COLOR]:  $RESET$2\n"
   else
     echo -e "$RESET$GREEN_COLOR [$GREEN_COLOR$BOLD$1$RESET$GREEN_COLOR]:  $RESET$2\n"
   fi
@@ -82,7 +79,7 @@ function f_menu {
   echo -e "\n\n"
 }
 function f_appTitle {
-  echo -e "$UNDERLINE$BOLD$YELLOW_COLOR\nWelcome to the $JS_TAG$BOLD$UNDERLINE Developer Console!$RESET\n"
+  echo -e "$UNDERLINE$BOLD$YELLOW_COLOR\nWelcome to the $JS_TAG$BOLD$UNDERLINE Developer Console!$1$RESET\n"
 }
 function f_userInput {
   echo -en "\n$RED_COLOR$BOLD▶$CYAN_COLOR▶$WHITE_COLOR▶ $LIGHT_BROWN_COLOR$BOLD$1"
@@ -137,7 +134,8 @@ function f_selector {
   34) f_electronjsReactjsFirebaseEmulatorsMobxSetup ;;
   35) f_electronjsReactjsFirebaseFunctionEmulatorsMobxSetup ;;
   *)
-    echo "default"
+    f_userMsg "$DANGER_STAR" "$RED_COLOR$BOLD""You have enter wrong key!!!$RESET"
+    f_selector
     ;;
   esac
 }
