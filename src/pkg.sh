@@ -87,7 +87,7 @@ function reactjs {
       rm -r package-lock.json
     fi
     yarn
-    yarn add react-router-dom --save
+    yarn add react-router-dom dotenv framer-motion lodash react-responsive react-star-ratings react-switch uuid react-icons react-google-maps
   fi
 
   configureReactManifestFile "$projectName" "$description"
@@ -189,7 +189,7 @@ function f_reactjsFirebaseAllSetup {
   if [[ $databaseSelection == 2 ]]; then
     firebase init database
   elif [[ $databaseSelection == 3 ]]; then
-    firebase init Database
+    firebase init database
     firebase init firestore
   else
     firebase init firestore
