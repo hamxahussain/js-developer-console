@@ -27,7 +27,7 @@ function f_line {
 
 function f_tageMsg {
   if [[ "$3" == "disabled" ]]; then
-    echo -e "   $RESET$DISABLED_COLOR[$DISABLED_COLOR$BOLD$1$RESET$DISABLED_COLOR]:  $RESET$2\n"
+    echo -e "    $RESET$DISABLED_COLOR[$DISABLED_COLOR$BOLD$1$RESET$DISABLED_COLOR]:  $RESET$2"
   else
     echo -e "   $RESET$GREEN_COLOR [$GREEN_COLOR$BOLD$1$RESET$GREEN_COLOR]:  $RESET$2"
   fi
@@ -45,40 +45,83 @@ function f_menu {
   f_line
   echo
   f_tageMsg " 1" "$HTML_TAG"
+  echo
   f_tageMsg " 2" "$HTML_TAG + $HOSTING_FIREBASE_TAG" "disabled"
+  echo
   f_tageMsg " 3" "$REACT_TAG"
-  f_tageMsg " 4" "$REACT_TAG + $FULL_FIREBASE_TAG" "disabled"
-  f_tageMsg " 5" "$REACT_TAG + $FUNCTION_FIREBASE_TAG" "disabled"
-  f_tageMsg " 6" "$REACT_TAG + $EMULATORS_FIREBASE_TAG" "disabled"
-  f_tageMsg " 7" "$REACT_TAG + $FUNCTION_EMULATORS_FIREBASE_TAG" "disabled"
-  f_tageMsg " 8" "$REACT_TAG + $MOBX_TAG" "disabled"
-  f_tageMsg " 9" "$REACT_TAG + $FULL_FIREBASE_TAG + $MOBX_TAG" "disabled"
-  f_tageMsg 10 "$REACT_TAG + $FUNCTION_FIREBASE_TAG + $MOBX_TAG" "disabled"
-  f_tageMsg 11 "$REACT_TAG + $EMULATORS_FIREBASE_TAG + $MOBX_TAG" "disabled"
-  f_tageMsg 12 "$REACT_TAG + $FUNCTION_EMULATORS_FIREBASE_TAG + $MOBX_TAG" "disabled"
-  f_tageMsg 13 "$REACT_NATIVE_TAG" "disabled"
-  f_tageMsg 14 "$REACT_NATIVE_TAG + $FULL_FIREBASE_TAG" "disabled"
-  f_tageMsg 15 "$REACT_NATIVE_TAG + $FUNCTION_FIREBASE_TAG" "disabled"
-  f_tageMsg 16 "$REACT_NATIVE_TAG + $EMULATORS_FIREBASE_TAG" "disabled"
-  f_tageMsg 17 "$REACT_NATIVE_TAG + $FUNCTION_EMULATORS_FIREBASE_TAG" "disabled"
-  f_tageMsg 18 "$REACT_NATIVE_TAG + $MOBX_TAG" "disabled"
-  f_tageMsg 19 "$REACT_NATIVE_TAG + $FULL_FIREBASE_TAG + $MOBX_TAG" "disabled"
-  f_tageMsg 20 "$REACT_NATIVE_TAG + $FUNCTION_FIREBASE_TAG + $MOBX_TAG" "disabled"
-  f_tageMsg 21 "$REACT_NATIVE_TAG + $EMULATORS_FIREBASE_TAG + $MOBX_TAG" "disabled"
-  f_tageMsg 22 "$REACT_NATIVE_TAG + $FUNCTION_EMULATORS_FIREBASE_TAG + $MOBX_TAG" "disabled"
-  f_tageMsg 23 "$NODE_TAG" "disabled"
-  f_tageMsg 24 "$NODE_TAG + $EXPRESS_TAG" "disabled"
-  f_tageMsg 25 "$ELECTRON_TAG" "disabled"
-  f_tageMsg 26 "$ELECTRON_TAG + $REACT_TAG" "disabled"
-  f_tageMsg 27 "$ELECTRON_TAG + $REACT_TAG + $FULL_FIREBASE_TAG" "disabled"
-  f_tageMsg 28 "$ELECTRON_TAG + $REACT_TAG + $FUNCTION_FIREBASE_TAG" "disabled"
-  f_tageMsg 29 "$ELECTRON_TAG + $REACT_TAG + $EMULATORS_FIREBASE_TAG" "disabled"
-  f_tageMsg 30 "$ELECTRON_TAG + $REACT_TAG + $FUNCTION_EMULATORS_FIREBASE_TAG" "disabled"
-  f_tageMsg 31 "$ELECTRON_TAG + $REACT_TAG + $MOBX_TAG" "disabled"
-  f_tageMsg 32 "$ELECTRON_TAG + $REACT_TAG + $FULL_FIREBASE_TAG + $MOBX_TAG" "disabled"
-  f_tageMsg 33 "$ELECTRON_TAG + $REACT_TAG + $FUNCTION_FIREBASE_TAG + $MOBX_TAG" "disabled"
-  f_tageMsg 34 "$ELECTRON_TAG + $REACT_TAG + $EMULATORS_FIREBASE_TAG + $MOBX_TAG" "disabled"
-  f_tageMsg 35 "$ELECTRON_TAG + $REACT_TAG + $FUNCTION_EMULATORS_FIREBASE_TAG + $MOBX_TAG" "disabled"
+  echo
+  f_tageMsg " 4" "$REACT_TAG + $FULL_FIREBASE_TAG"
+  echo
+  f_tageMsg " 5" "$REACT_TAG + $HOSTING_FIREBASE_TAG"
+  echo
+  f_tageMsg " 6" "$REACT_TAG + $FUNCTION_FIREBASE_TAG"
+  echo
+  f_tageMsg " 7" "$REACT_TAG + $EMULATORS_FIREBASE_TAG"
+  echo
+  f_tageMsg " 8" "$REACT_TAG + $FUNCTION_EMULATORS_HOSTING_FIREBASE_TAG"
+  echo
+  f_tageMsg " 9" "$REACT_TAG + $MOBX_TAG" "disabled"
+  echo
+  f_tageMsg " 10" "$REACT_TAG + $FULL_FIREBASE_TAG + $MOBX_TAG" "disabled"
+  echo
+  f_tageMsg 11 "$REACT_TAG + $HOSTING_FIREBASE_TAG + $MOBX_TAG" "disabled"
+  echo
+  f_tageMsg 12 "$REACT_TAG + $FUNCTION_FIREBASE_TAG + $MOBX_TAG" "disabled"
+  echo
+  f_tageMsg 13 "$REACT_TAG + $EMULATORS_FIREBASE_TAG + $MOBX_TAG" "disabled"
+  echo
+  f_tageMsg 14 "$REACT_TAG + $FUNCTION_EMULATORS_HOSTING_FIREBASE_TAG + $MOBX_TAG" "disabled"
+  echo
+  f_tageMsg 15 "$REACT_NATIVE_TAG" "disabled"
+  echo
+  f_tageMsg 16 "$REACT_NATIVE_TAG + $FULL_FIREBASE_TAG" "disabled"
+  echo
+  f_tageMsg 17 "$REACT_NATIVE_TAG + $FUNCTION_FIREBASE_TAG" "disabled"
+  echo
+  f_tageMsg 18 "$REACT_NATIVE_TAG + $EMULATORS_FIREBASE_TAG" "disabled"
+  echo
+  f_tageMsg 19 "$REACT_NATIVE_TAG + $FUNCTION_EMULATORS_FIREBASE_TAG" "disabled"
+  echo
+  f_tageMsg 20 "$REACT_NATIVE_TAG + $MOBX_TAG" "disabled"
+  echo
+  f_tageMsg 21 "$REACT_NATIVE_TAG + $FULL_FIREBASE_TAG + $MOBX_TAG" "disabled"
+  echo
+  f_tageMsg 22 "$REACT_NATIVE_TAG + $FUNCTION_FIREBASE_TAG + $MOBX_TAG" "disabled"
+  echo
+  f_tageMsg 23 "$REACT_NATIVE_TAG + $EMULATORS_FIREBASE_TAG + $MOBX_TAG" "disabled"
+  echo
+  f_tageMsg 24 "$REACT_NATIVE_TAG + $FUNCTION_EMULATORS_FIREBASE_TAG + $MOBX_TAG" "disabled"
+  echo
+  f_tageMsg 25 "$NODE_TAG" "disabled"
+  echo
+  f_tageMsg 26 "$NODE_TAG + $EXPRESS_TAG" "disabled"
+  echo
+  f_tageMsg 27 "$ELECTRON_TAG" "disabled"
+  echo
+  f_tageMsg 28 "$ELECTRON_TAG + $REACT_TAG" "disabled"
+  echo
+  f_tageMsg 29 "$ELECTRON_TAG + $REACT_TAG + $FULL_FIREBASE_TAG" "disabled"
+  echo
+  f_tageMsg 30 "$ELECTRON_TAG + $REACT_TAG + $FUNCTION_FIREBASE_TAG" "disabled"
+  echo
+  f_tageMsg 31 "$ELECTRON_TAG + $REACT_TAG + $HOSTING_FIREBASE_TAG" "disabled"
+  echo
+  f_tageMsg 32 "$ELECTRON_TAG + $REACT_TAG + $EMULATORS_FIREBASE_TAG" "disabled"
+  echo
+  f_tageMsg 33 "$ELECTRON_TAG + $REACT_TAG + $FUNCTION_EMULATORS_HOSTING_FIREBASE_TAG" "disabled"
+  echo
+  f_tageMsg 34 "$ELECTRON_TAG + $REACT_TAG + $MOBX_TAG" "disabled"
+  echo
+  f_tageMsg 35 "$ELECTRON_TAG + $REACT_TAG + $FULL_FIREBASE_TAG + $MOBX_TAG" "disabled"
+  echo
+  f_tageMsg 36 "$ELECTRON_TAG + $REACT_TAG + $HOSTING_FIREBASE_TAG + $MOBX_TAG" "disabled"
+  echo
+  f_tageMsg 37 "$ELECTRON_TAG + $REACT_TAG + $FUNCTION_FIREBASE_TAG + $MOBX_TAG" "disabled"
+  echo
+  f_tageMsg 38 "$ELECTRON_TAG + $REACT_TAG + $EMULATORS_FIREBASE_TAG + $MOBX_TAG" "disabled"
+  echo
+  f_tageMsg 39 "$ELECTRON_TAG + $REACT_TAG + $FUNCTION_EMULATORS_HOSTING_FIREBASE_TAG + $MOBX_TAG" "disabled"
+  echo
   f_line
   f_tageMsg 99 "exit"
   echo -e "\n\n"
@@ -117,37 +160,41 @@ function f_selector {
   2) f_htmlFirebaseHostingSetup ;;
   3) f_reactjsSetup ;;
   4) f_reactjsFirebaseAllSetup ;;
-  5) f_reactjsFirebaseFunctionsSetup ;;
-  6) f_reactjsFirebaseEmulatorsSetup ;;
-  7) f_reactjsFirebaseFunctionEmulatorsSetup ;;
-  8) f_reactjsMobxSetup ;;
-  9) f_reactjsFirebaseAllMobxSetup ;;
-  10) f_reactjsFirebaseFunctionsMobxSetup ;;
-  11) f_reactjsFirebaseEmulatorsMobxSetup ;;
-  12) f_reactjsFirebaseFunctionEmulatorsMobxSetup ;;
-  13) f_reactNativeSetup ;;
-  14) f_reactNativeFirebaseAllSetup ;;
-  15) f_reactNativeFirebaseFunctionsSetup ;;
-  16) f_reactNativeFirebaseEmulatorsSetup ;;
-  17) f_reactNativeFirebaseFunctionEmulatorsSetup ;;
-  18) f_reactNativeMobxSetup ;;
-  19) f_reactNativeFirebaseAllMobxSetup ;;
-  20) f_reactNativeFirebaseFunctionsMobxSetup ;;
-  21) f_reactNativeFirebaseEmulatorsMobxSetup ;;
-  22) f_reactNativeFirebaseFunctionEmulatorsMobxSetup ;;
-  23) f_nodeSetup ;;
-  24) f_nodeExpressSetup ;;
-  25) f_electronjsSetup ;;
-  26) f_electronjsReactjsSetup ;;
-  27) f_electronjsReactjsFirebaseAllSetup ;;
-  28) f_electronjsReactjsFirebaseFunctionsSetup ;;
-  29) f_electronjsReactjsFirebaseEmulatorsSetup ;;
-  30) f_electronjsReactjsFirebaseFunctionEmulatorsSetup ;;
-  31) f_electronjsReactjsMobxSetup ;;
-  32) f_electronjsReactjsFirebaseAllMobxSetup ;;
-  33) f_electronjsReactjsFirebaseFunctionsMobxSetup ;;
-  34) f_electronjsReactjsFirebaseEmulatorsMobxSetup ;;
-  35) f_electronjsReactjsFirebaseFunctionEmulatorsMobxSetup ;;
+  5) f_reactjsFirebaseHostingsSetup ;;
+  6) f_reactjsFirebaseFunctionsSetup ;;
+  7) f_reactjsFirebaseEmulatorsSetup ;;
+  8) f_reactjsFirebaseFunctionEmulatorsHostingsSetup ;;
+  9) f_reactjsMobxSetup ;;
+  10) f_reactjsFirebaseAllMobxSetup ;;
+  11) f_reactjsFirebaseHostingsMobxSetup ;;
+  12) f_reactjsFirebaseFunctionsMobxSetup ;;
+  13) f_reactjsFirebaseEmulatorsMobxSetup ;;
+  14) f_reactjsFirebaseFunctionEmulatorsHostingsMobxSetup ;;
+  15) f_reactNativeSetup ;;
+  16) f_reactNativeFirebaseAllSetup ;;
+  17) f_reactNativeFirebaseFunctionsSetup ;;
+  18) f_reactNativeFirebaseEmulatorsSetup ;;
+  19) f_reactNativeFirebaseFunctionEmulatorsSetup ;;
+  20) f_reactNativeMobxSetup ;;
+  21) f_reactNativeFirebaseAllMobxSetup ;;
+  22) f_reactNativeFirebaseFunctionsMobxSetup ;;
+  23) f_reactNativeFirebaseEmulatorsMobxSetup ;;
+  24) f_reactNativeFirebaseFunctionEmulatorsMobxSetup ;;
+  25) f_nodeSetup ;;
+  26) f_nodeExpressSetup ;;
+  27) f_electronjsSetup ;;
+  28) f_electronjsReactjsSetup ;;
+  39) f_electronjsReactjsFirebaseAllSetup ;;
+  30) f_electronjsReactjsFirebaseHostingsSetup ;;
+  31) f_electronjsReactjsFirebaseFunctionsSetup ;;
+  32) f_electronjsReactjsFirebaseEmulatorsSetup ;;
+  33) f_electronjsReactjsFirebaseFunctionEmulatorsHostingsSetup ;;
+  34) f_electronjsReactjsMobxSetup ;;
+  35) f_electronjsReactjsFirebaseAllMobxSetup ;;
+  36) f_electronjsReactjsFirebaseHostingsMobxSetup ;;
+  37) f_electronjsReactjsFirebaseFunctionsMobxSetup ;;
+  38) f_electronjsReactjsFirebaseEmulatorsMobxSetup ;;
+  39) f_electronjsReactjsFirebaseFunctionEmulatorsHostingsMobxSetup ;;
   99) f_exit_program ;;
   *)
     f_userMsg "$DANGER_STAR" "$RED_COLOR$BOLD""You have enter wrong key!!!$RESET"

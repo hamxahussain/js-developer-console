@@ -110,7 +110,7 @@ function react_index_file_code {
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running \$(npm run build).
     -->
-    <title>$1</title>
+    <title>$5</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -162,19 +162,19 @@ import \"./App.css\";
 import React, { useState, useEffect } from \"react\";
 import { Switch, Route, Redirect } from \"react-router-dom\";
 
-import Home from \"./resources/screens/app/Home/Home\";
-import Signup from \"./resources/screens/auth/Signup/Signup\";
-import Login from \"./resources/screens/auth/Login/Login\";
-import ErrorPage from \"./resources/screens/404\";
+import Home from \"./resources/__screens/app/Home/Home\";
+import Signup from \"./resources/__screens/auth/Signup/Signup\";
+import Login from \"./resources/__screens/auth/Login/Login\";
+import ErrorPage from \"./resources/__screens/404\";
 
 function App({children, ...props}) {
 	return (
 		<>
 			<Switch>
-				<Route path=\"/\">
+				<Route exact path=\"/\">
 					<Home />
 				</Route>
-				<Route path=\"/404\">
+				<Route exact path=\"/404\">
 					<ErrorPage message=\"404\"/>
 				</Route>
 				<Redirect to=\"404\" />
@@ -192,7 +192,7 @@ function react_functional_component {
 import React from \"react\"
 import \"./$3.css\"
 
-export function $2 ({children,...props}) {
+export default function $2 ({children,...props}) {
 
   return (
     <>
@@ -202,4 +202,42 @@ export function $2 ({children,...props}) {
     </>
   )
 }"
+}
+function react_use_dimension_hook {
+  fbi $1 $2
+  echo "
+import { useState, useEffect } from \"react\";
+
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height
+  };
+}
+
+export default function useDimension() {
+  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    window.addEventListener(\"resize\", handleResize);
+    return () => window.removeEventListener(\"resize\", handleResize);
+  }, []);
+
+  return windowDimensions;
+}
+
+"
+}
+function react_hooks_index_file_code {
+  fbi $1 $2
+  echo "
+import useDimension from \"./useDimension\";
+
+export { useDimension };
+"
 }
